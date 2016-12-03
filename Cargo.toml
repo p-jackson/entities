@@ -5,7 +5,10 @@ authors = ["Philip Jackson <p-jackson@live.com>"]
 description = "Provides the raw data needed to convert to and from HTML entities."
 repository = "https://github.com/p-jackson/entities"
 readme = "README.md"
+build = "build.rs"
 license = "MIT"
 keywords = ["HTML", "entities", "character", "escape"]
 
-[dependencies]
+[build-dependencies]
+hyper = "0.9"
+json = "0.11"
