@@ -5,6 +5,8 @@ mod entities;
 
 
 pub use entities::ENTITIES;
+pub use entities::Codepoints;
+pub use entities::Entity;
 
 
 #[cfg(test)]
