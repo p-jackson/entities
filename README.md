@@ -26,7 +26,7 @@ slices to reuse the statically allocated strings from this crate e.g.
 
 ```rust
 fn make_mapping() -> HashMap<&'static str, &'static str> {
-    let mut mapping = HashMap::<&'static str, &'static str>::new();
+    let mut mapping = HashMap::new();
     mapping.insert(ENTITIES[0].entity, ENTITIES[0].characters);
     mapping
 }
