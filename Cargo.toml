@@ -2,5 +2,10 @@
 name = "entities"
 version = "0.1.0"
 authors = ["Philip Jackson <p-jackson@live.com>"]
+description = "Provides the raw data needed to convert to and from HTML entities."
+repository = "https://github.com/p-jackson/entities"
+readme = "README.md"
+license = "MIT"
+keywords = ["HTML", "entities", "character", "escape"]
 
 [dependencies]
