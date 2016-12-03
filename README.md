@@ -1,4 +1,4 @@
-# entities
+# entities [![Crates.io](https://img.shields.io/crates/v/entities.svg?maxAge=3600)](https://crates.io/crates/entities)
 
 Provides the raw data needed to convert to and from HTML entities.
 
