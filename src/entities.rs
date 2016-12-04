@@ -1,9 +1,11 @@
+#[derive(Debug)]
 pub enum Codepoints {
     Single(u32),
     Double(u32, u32),
 }
 
 
+#[derive(Debug)]
 pub struct Entity {
     pub entity: &'static str,
     pub codepoints: Codepoints,
