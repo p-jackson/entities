@@ -1,19 +1,9 @@
-#[derive(Debug)]
-pub enum Codepoints {
-    Single(u32),
-    Double(u32, u32),
-}
+use super::{Entity, Codepoints};
 
 
-#[derive(Debug)]
-pub struct Entity {
-    pub entity: &'static str,
-    pub codepoints: Codepoints,
-    pub characters: &'static str,
-}
-
-
-// Data generated from https://www.w3.org/TR/html5/entities.json
+/// The static constant array of entity definitions.
+///
+/// Data generated from https://www.w3.org/TR/html5/entities.json
 pub static ENTITIES: [Entity; 2231] = [
     Entity { entity: "&Aacute;", codepoints: Codepoints::Single(193), characters: "Á" },
     Entity { entity: "&Aacute", codepoints: Codepoints::Single(193), characters: "Á" },
