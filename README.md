@@ -2,6 +2,8 @@
 
 Provides the raw data needed to convert to and from HTML entities.
 
+## Basic Usage
+
 ```rust
 extern crate entities;
 use entities::ENTITIES;
@@ -32,8 +34,6 @@ fn make_mapping() -> HashMap<&'static str, &'static str> {
 }
 ```
 
-I expect this crate will reach version 1.0 pretty quickly after I've tried
-the API out in an app.
+## Documentation
 
-Data was generated from
-[https://www.w3.org/TR/html5/entities.json](https://www.w3.org/TR/html5/entities.json)
+[https://docs.rs/entities](https://docs.rs/entities)
