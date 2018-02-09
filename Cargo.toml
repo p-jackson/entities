@@ -1,6 +1,6 @@
 [package]
 name = "entities"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Philip Jackson <p-jackson@live.com>"]
 description = "Provides the raw data needed to convert to and from HTML entities."
 repository = "https://github.com/p-jackson/entities"
