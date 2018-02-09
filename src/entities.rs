@@ -3,7 +3,7 @@ use super::{Entity, Codepoints};
 
 /// The static constant array of entity definitions.
 ///
-/// Data generated from https://www.w3.org/TR/html5/entities.json
+/// Data generated from <https://www.w3.org/TR/html5/entities.json>
 pub static ENTITIES: [Entity; 2231] = [
     Entity { entity: "&Aacute;", codepoints: Codepoints::Single(193), characters: "Á" },
     Entity { entity: "&Aacute", codepoints: Codepoints::Single(193), characters: "Á" },
