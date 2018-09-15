@@ -35,12 +35,9 @@
 //! Data was generated from
 //! [https://www.w3.org/TR/html5/entities.json](https://www.w3.org/TR/html5/entities.json)
 
-
 #![no_std]
 
-
 mod entities;
-
 
 /// The unicode codepoint(s) for the "character" an entity is encoding.
 #[derive(Debug)]
@@ -48,7 +45,6 @@ pub enum Codepoints {
     Single(u32),
     Double(u32, u32),
 }
-
 
 /// Represents an entry in the array of entity definitions.
 #[derive(Debug)]
@@ -58,9 +54,7 @@ pub struct Entity {
     pub characters: &'static str,
 }
 
-
 pub use entities::ENTITIES;
-
 
 #[cfg(test)]
 mod tests {
@@ -79,7 +73,9 @@ mod tests {
     fn make_map() {
         let mut mapping = HashMap::<&'static str, &'static str>::new();
         mapping.insert(ENTITIES[0].entity, ENTITIES[0].characters);
-        assert_eq!(mapping.get(ENTITIES[0].entity),
-                   Some(&ENTITIES[0].characters));
+        assert_eq!(
+            mapping.get(ENTITIES[0].entity),
+            Some(&ENTITIES[0].characters)
+        );
     }
 }
