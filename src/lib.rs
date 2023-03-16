@@ -1,7 +1,6 @@
 //! Provides the raw data needed to convert to and from HTML entities.
 //!
-//! ```
-//! extern crate entities;
+//! ```edition2021
 //! use entities::ENTITIES;
 //!
 //! fn main() {
@@ -22,8 +21,8 @@
 //! If you want to create a mapping structure you can make one using static `str`
 //! slices to reuse the statically allocated strings from this crate e.g.
 //!
-//! ```
-//! # use self::std::collections::HashMap;
+//! ```edition2021
+//! # use std::collections::HashMap;
 //! # use entities::ENTITIES;
 //! fn make_mapping() -> HashMap<&'static str, &'static str> {
 //!     let mut mapping = HashMap::new();
