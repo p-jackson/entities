@@ -5,7 +5,6 @@ Provides the raw data needed to convert to and from HTML entities.
 ## Basic Usage
 
 ```rust
-extern crate entities;
 use entities::ENTITIES;
 
 fn main() {
