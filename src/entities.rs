@@ -5802,22 +5802,22 @@ pub static ENTITIES: [Entity; 2231] = [
     Entity {
         entity: "&NegativeMediumSpace;",
         codepoints: Codepoints::Single(8203),
-        characters: "​",
+        characters: "\u{200B}",
     },
     Entity {
         entity: "&NegativeThickSpace;",
         codepoints: Codepoints::Single(8203),
-        characters: "​",
+        characters: "\u{200B}",
     },
     Entity {
         entity: "&NegativeThinSpace;",
         codepoints: Codepoints::Single(8203),
-        characters: "​",
+        characters: "\u{200B}",
     },
     Entity {
         entity: "&NegativeVeryThinSpace;",
         codepoints: Codepoints::Single(8203),
-        characters: "​",
+        characters: "\u{200B}",
     },
     Entity {
         entity: "&nequiv;",
@@ -6088,7 +6088,7 @@ pub static ENTITIES: [Entity; 2231] = [
     Entity {
         entity: "&NoBreak;",
         codepoints: Codepoints::Single(8288),
-        characters: "⁠",
+        characters: "\u{2060}",
     },
     Entity {
         entity: "&NonBreakingSpace;",
@@ -8803,12 +8803,12 @@ pub static ENTITIES: [Entity; 2231] = [
     Entity {
         entity: "&shy;",
         codepoints: Codepoints::Single(173),
-        characters: "­",
+        characters: "\u{AD}",
     },
     Entity {
         entity: "&shy",
         codepoints: Codepoints::Single(173),
-        characters: "­",
+        characters: "\u{AD}",
     },
     Entity {
         entity: "&Sigma;",
@@ -11093,7 +11093,7 @@ pub static ENTITIES: [Entity; 2231] = [
     Entity {
         entity: "&ZeroWidthSpace;",
         codepoints: Codepoints::Single(8203),
-        characters: "​",
+        characters: "\u{200B}",
     },
     Entity {
         entity: "&Zeta;",
