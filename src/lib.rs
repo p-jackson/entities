@@ -35,6 +35,7 @@
 //! [https://www.w3.org/TR/html5/entities.json](https://www.w3.org/TR/html5/entities.json)
 
 #![no_std]
+#![allow(clippy::needless_doctest_main)]
 
 mod entities;
 
