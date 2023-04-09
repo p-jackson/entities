@@ -9,6 +9,7 @@ readme = "README.md"
 license = "MIT"
 keywords = ["HTML", "entities", "character", "escape"]
 edition = "2015"
+rust-version = "1.13"
 
 [dependencies]
 
