@@ -1,4 +1,4 @@
-# entities [![Crates.io](https://img.shields.io/crates/v/entities.svg?maxAge=3600)](https://crates.io/crates/entities)
+# entities [![Build status](https://github.com/p-jackson/entities/actions/workflows/ci.yml/badge.svg)](https://github.com/p-jackson/entities/actions/workflows/ci.yml) [![Crates.io](https://img.shields.io/crates/v/entities.svg?maxAge=3600)](https://crates.io/crates/entities)
 
 Provides the raw data needed to convert to and from HTML entities.
 
