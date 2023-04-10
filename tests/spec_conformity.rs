@@ -46,6 +46,19 @@ fn check_spec_conformity() {
         }
     }
 
+    for entity in spec
+        .as_object()
+        .expect("spec file doesn't contain a JSON object")
+        .keys()
+    {
+        let found = ENTITIES.iter().find(|e| e.entity == entity);
+        assert!(
+            found.is_some(),
+            "entity {} is in spec but not in crate",
+            entity
+        );
+    }
+
     assert_eq!(
         spec.as_object().unwrap().len(),
         ENTITIES.iter().count(),
