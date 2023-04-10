@@ -17,17 +17,36 @@ fn check_spec_conformity() {
     let spec = load_entities_spec();
 
     for e in ENTITIES.iter() {
-        assert_eq!(spec[e.entity]["characters"], json!(e.characters));
+        assert_eq!(
+            spec[e.entity]["characters"],
+            json!(e.characters),
+            "failed while comparing characters for entity {}",
+            e.entity
+        );
 
         match e.codepoints {
             entities::Codepoints::Single(x) => {
-                assert_eq!(spec[e.entity]["codepoints"], json!([x]))
+                assert_eq!(
+                    spec[e.entity]["codepoints"],
+                    json!([x]),
+                    "failed while comparing codepoints for entity {}",
+                    e.entity
+                )
             }
             entities::Codepoints::Double(x, y) => {
-                assert_eq!(spec[e.entity]["codepoints"], json!([x, y]))
+                assert_eq!(
+                    spec[e.entity]["codepoints"],
+                    json!([x, y]),
+                    "failed while comparing codepoints for entity {}",
+                    e.entity
+                )
             }
         }
     }
 
-    assert_eq!(spec.as_object().unwrap().len(), ENTITIES.iter().count());
+    assert_eq!(
+        spec.as_object().unwrap().len(),
+        ENTITIES.iter().count(),
+        "spec and crate have different number of entities"
+    );
 }
