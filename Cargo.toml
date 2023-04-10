@@ -11,6 +11,8 @@ keywords = ["HTML", "entities", "character", "escape"]
 edition = "2015"
 rust-version = "1.13"
 
+exclude = ["tests/entities.json"]
+
 [dependencies]
 
 [dev-dependencies]
