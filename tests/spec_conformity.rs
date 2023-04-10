@@ -6,7 +6,9 @@ use std::fs::File;
 use std::io::BufReader;
 
 fn load_entities_spec() -> Value {
-    let file = File::open("./tests/entities.json").unwrap();
+    let file = File::open("./downloaded-entities.json")
+        .or_else(|_| File::open("./tests/entities.json"))
+        .expect("failed to open ./downloaded-entities or ./tests/entities.json");
     let reader = BufReader::new(file);
 
     serde_json::from_reader(reader).unwrap()
