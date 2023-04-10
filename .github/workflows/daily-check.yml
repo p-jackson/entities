@@ -1,0 +1,21 @@
+name: Daily Check for New Entities
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  check:
+    name: Download latest entities.json and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+      - run: curl -L -o ./downloaded-entities.json https://www.w3.org/TR/html5/entities.json
+      - run: cargo test --test spec_conformity
