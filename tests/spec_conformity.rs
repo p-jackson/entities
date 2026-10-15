@@ -1,7 +1,7 @@
 extern crate entities;
 extern crate serde_json;
 use entities::ENTITIES;
-use serde_json::{json, Value};
+use serde_json::Value;
 use std::fs::File;
 use std::io::BufReader;
 
@@ -18,19 +18,22 @@ fn load_entities_spec() -> Value {
 fn check_spec_conformity() {
     let spec = load_entities_spec();
 
+    #[cfg(any(feature = "characters", feature = "codepoints"))]
     for e in ENTITIES.iter() {
+        #[cfg(feature = "characters")]
         assert_eq!(
             spec[e.entity]["characters"],
-            json!(e.characters),
+            serde_json::json!(e.characters),
             "failed while comparing characters for entity {}",
             e.entity
         );
 
+        #[cfg(feature = "codepoints")]
         match e.codepoints {
             entities::Codepoints::Single(x) => {
                 assert_eq!(
                     spec[e.entity]["codepoints"],
-                    json!([x]),
+                    serde_json::json!([x]),
                     "failed while comparing codepoints for entity {}",
                     e.entity
                 )
@@ -38,7 +41,7 @@ fn check_spec_conformity() {
             entities::Codepoints::Double(x, y) => {
                 assert_eq!(
                     spec[e.entity]["codepoints"],
-                    json!([x, y]),
+                    serde_json::json!([x, y]),
                     "failed while comparing codepoints for entity {}",
                     e.entity
                 )

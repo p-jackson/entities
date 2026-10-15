@@ -13,6 +13,11 @@ rust-version = "1.13"
 
 exclude = ["tests/entities.json"]
 
+[features]
+default = ["codepoints", "characters"]
+codepoints = []
+characters = []
+
 [dependencies]
 
 [dev-dependencies]

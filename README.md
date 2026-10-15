@@ -36,3 +36,10 @@ fn make_mapping() -> HashMap<&'static str, &'static str> {
 ## Documentation
 
 [https://docs.rs/entities](https://docs.rs/entities)
+
+## Cargo features
+
+The crate has two Cargo features: `codepoints` and `characters`.  They are
+enabled by default.  Disabling each removes corresponding field from the
+`ENTITIES` table.  That is, if one only ever accesses `characters` field, the
+`codepoints` feature may be disabled to safe small amount of binary size.

@@ -42,7 +42,11 @@ jobs:
         with:
           toolchain: ${{ matrix.rust }}
           profile: minimal
-      - run: cargo test --verbose
+      - run:
+          cargo test --verbose
+          cargo test --verbose --no-default-features
+          cargo test --verbose --no-default-features -F characters
+          cargo test --verbose --no-default-features -F codepoints
 
   clippy:
     name: Clippy

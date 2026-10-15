@@ -9,6 +9,7 @@
 //!         .find(|e| e.entity == "&gt;")
 //!         .unwrap();
 //!
+//! #   #[cfg(feature = "characters")]
 //!     assert_eq!(entity.characters, ">");
 //!     assert_eq!(entity.entity, "&gt;");
 //! }
@@ -26,6 +27,7 @@
 //! # use entities::ENTITIES;
 //! fn make_mapping() -> HashMap<&'static str, &'static str> {
 //!     let mut mapping = HashMap::new();
+//! #   #[cfg(feature = "characters")]
 //!     mapping.insert(ENTITIES[0].entity, ENTITIES[0].characters);
 //!     mapping
 //! }
@@ -40,7 +42,9 @@
 mod entities;
 
 /// The unicode codepoint(s) for the "character" an entity is encoding.
+#[cfg(feature = "codepoints")]
 #[derive(Debug)]
+#[cfg_attr(test, derive(PartialEq, Eq))]
 pub enum Codepoints {
     Single(u32),
     Double(u32, u32),
@@ -50,7 +54,9 @@ pub enum Codepoints {
 #[derive(Debug)]
 pub struct Entity {
     pub entity: &'static str,
+    #[cfg(feature = "codepoints")]
     pub codepoints: Codepoints,
+    #[cfg(feature = "characters")]
     pub characters: &'static str,
 }
 
@@ -59,18 +65,22 @@ pub use entities::ENTITIES;
 #[cfg(test)]
 mod tests {
     extern crate std;
-    use self::std::collections::HashMap;
     use super::ENTITIES;
 
     #[test]
     fn sanity() {
-        let found = ENTITIES.iter().find(|e| e.entity == "&gt;");
-        assert!(found.is_some());
-        assert_eq!(found.unwrap().characters, ">");
+        let found = ENTITIES.iter().find(|e| e.entity == "&gt;").unwrap();
+        #[cfg(feature = "codepoints")]
+        assert_eq!(found.codepoints, super::Codepoints::Single(62));
+        #[cfg(feature = "characters")]
+        assert_eq!(found.characters, ">");
+        let _ = found;
     }
 
     #[test]
+    #[cfg(feature = "characters")]
     fn make_map() {
+        use self::std::collections::HashMap;
         let mut mapping = HashMap::<&'static str, &'static str>::new();
         mapping.insert(ENTITIES[0].entity, ENTITIES[0].characters);
         assert_eq!(
